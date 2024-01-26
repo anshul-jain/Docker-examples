@@ -5,7 +5,7 @@ Practical Docker guide
 ### Docker file Commands
 
 | Command        | Description           | Example  |
-| -------------  |:---------------------:|---------:|
+| -------------  |:---------------------|:---------|
 | FROM           | Specifies the base image for the build| FROM ubuntu:latest |
 | RUN       | Executes a command inside the container during build time | RUN apt-get update && apt-get install -y curl |
 | CMD  | Specifies the default command to run when the container starts | CMD [“npm”, “start”] |
@@ -20,3 +20,14 @@ Practical Docker guide
 |USER|Sets the user or UID to use when running the image|USER appuser|
 |LABEL|Adds metadata to an image in the form of key-value pairs|LABEL version=”1.0″ maintainer=”John Doe|
 |ONBUILD|Configures commands to run when the image is used as the base for another build|ONBUILD ADD . /app/src|
+
+
+### Docker Volume Commands
+
+| Command        | Description           | Example  |
+| -------------  |:---------------------|:---------|
+| volume create  | Creates a named volume| docker volume create mydata |
+|volume ls|Lists the available volumes|docker volume ls|
+|volume inspect|Displays detailed information about a volume|docker volume inspect mydata|
+|volume rm|Removes one or more volumes|docker volume rm mydata|
+|volume prune|Removes all unused volumes|docker volume prune|
